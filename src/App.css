@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: flex-start; /* Alignement en haut */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Top Container Styles */
+.top {
+  width: 100%;
+  margin: 0 auto; /* Centrage horizontal */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrage vertical des éléments enfants */
+}
+
+h5 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: -0.05rem;
+}
+
+/* Keyframes pour l'animation de lévitation */
+@keyframes levitate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 150px) {
+  .top {
+    right: 0;
+    transform: translateX(0);
+  }
+
+  .links {
+    right: 0;
+    transform: translateX(0);
+  }
+}
+
+/* Profile Picture Styles */
+.profile-picture {
+  width: 250px;
+  height: 240px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Appliquer l'animation lors du survol de l'image */
+.profile-picture:hover {
+  animation: levitate 1s ease-in-out infinite;
+}
+
+/* Name Styles */
+h2 {
+  font-size: 2.5em;
+  font-family: "Arial", sans-serif;
+  margin-bottom: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.name {
+  color: #fff;
+  font-size: 60pt; /* size of the font */
+  margin: -25px auto; /* vertical margin from top, horizontal centering (using auto) */
+  width: max-content; /* Takes up full width of screen */
+}
+
+/* Links Container Styles */
+.links {
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  color: rgb(255, 255, 255);
+}
+
+/* Link Icon Styles */
+.link-icon {
+  font-size: 24px;
+  color: #646cff;
+  transition: color 0.25s;
+  margin: 0 10px;
+}
+
+.link-icon:hover {
+  color: #535bf2;
+  animation: levitate 1s ease-in-out infinite;
+  transition: transform 0.3s, color 0.3s;
+}
+
+/* A propos de moi */
+.summary {
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr {
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Styles pour les boutons avec outline */
+.projects-btns,
+.skills-btns,
+.exp-btns {
+  background-color: transparent;
+  color: #646cff;
+  border: 2px solid #646cff;
+  border-radius: 0%;
+  gap: 10px;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s; /* Ajoute des transitions pour un effet plus fluide */
+  cursor: pointer; /* Change le curseur pour indiquer la possibilité de cliquer */
+}
+
+.projects-btns:hover,
+.skills-btns:hover,
+.exp-btns:hover {
+  background-color: rgba(100, 108, 255, 0.4);
+  color: #fff;
+  animation: ripple 1s ease-out forwards;
+  transform: scale(1.15); /* Légère augmentation de taille au survol */
+  border: 0;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 200px; /* Ajoute un peu d'espace entre les boutons */
+  margin-top: 20px; /* Ajustez selon l'espace souhaité après le résumé */
+}
+
+.projects-selection .project-button {
+  border-radius: 50%; /* Rend le bouton complètement arrondi */
+  border: none; /* Supprime la bordure par défaut */
+  overflow: hidden; /* Empêche l'image de déborder du bouton arrondi */
+  padding: 0; /* Supprime le padding par défaut */
+}
+
+.projects-selection .project-button img {
+  width: 100px; /* Ajustez selon la taille désirée */
+  height: 100px; /* Gardez la même valeur que la largeur pour un cercle parfait */
+  object-fit: cover; /* Assure que l'image couvre bien la zone sans être déformée */
+}
+
+/* Animation d'ondulation ajustée */
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(100, 108, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(100, 108, 255, 0);
+  }
+}
