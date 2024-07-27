@@ -170,3 +170,83 @@ hr {
     box-shadow: 0 0 0 20px rgba(100, 108, 255, 0);
   }
 }
+
+.projects-overview {
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes rgb-border {
+  0% {
+    border-color: red;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+  8.33% {
+    border-color: indigo;
+    box-shadow: 0 0 20px rgba(75, 0, 130, 0.5);
+  }
+  16.67% {
+    border-color: orange;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+  }
+  25% {
+    border-color: aqua;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  33.33% {
+    border-color: yellow;
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+  }
+  50% {
+    border-color: green;
+    box-shadow: 0 0 20px rgba(0, 128, 0, 0.5);
+  }
+  66.67% {
+    border-color: blue;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+  }
+  83.33% {
+    border-color: violet;
+    box-shadow: 0 0 20px rgba(238, 130, 238, 0.5);
+  }
+  100% {
+    border-color: red;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+}
+
+#projects-line {
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #646cff;
+  animation: rgb-border 3s infinite;
+  box-shadow: 0 0 20px rgba(100, 108, 255, 0.5);
+  border-radius: 10px;
+}
+
+.projects-selection {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Ajustez selon l'espace souhaité entre les boutons */
+  margin-top: 20px; /* Ajustez selon l'espace souhaité après le résumé */
+}
+
+.projects-selection .project-button {
+  border-radius: 50%; /* Rend le bouton complètement arrondi */
+  border: none; /* Supprime la bordure par défaut */
+  overflow: hidden; /* Empêche l'image de déborder du bouton arrondi */
+  padding: 0; /* Supprime le padding par défaut */
+}
+
+.projects-selection .project-button img {
+  width: 100px; /* Ajustez selon la taille désirée */
+  height: 100px; /* Gardez la même valeur que la largeur pour un cercle parfait */
+  object-fit: cover; /* Assure que l'image couvre bien la zone sans être déformée */
+}

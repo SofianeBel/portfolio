@@ -1,19 +1,24 @@
 import { Container } from "react-bootstrap";
+import { useState } from "react";
+import Projects from "./Projects";
+// import Skills from "./Skills";
+// import Experience from "./Experience";
 
 export default function Btns() {
+  const [showProjects, setShowProjects] = useState(false);
+  const [showSkills, setShowSkills] = useState(false);
+  const [showExperience, setShowExperience] = useState(false);
+
   const handleAddProject = () => {
-    // Logique pour ajouter un projet
-    console.log("Ajout d'un projet");
+    setShowProjects(!showProjects);
   };
 
   const handleAddSkill = () => {
-    // Logique pour ajouter une compétence
-    console.log("Ajout d'une compétence");
+    setShowSkills(!showSkills);
   };
 
   const handleAddExperience = () => {
-    // Logique pour ajouter une expérience
-    console.log("Ajout d'une expérience");
+    setShowExperience(!showExperience);
   };
 
   return (
@@ -35,6 +40,9 @@ export default function Btns() {
       >
         Experiences
       </button>
+      {showProjects && <Projects />}
+      {/* {showSkills && <Skills />}
+      {showExperience && <Experience />} */}
     </div>
   );
 }
